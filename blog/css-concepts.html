@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  
+   <head>
+    <link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
+    <link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
+
+    <title>
+        Blog Title
+    </title>
+  
+  </head>
+
+
+  <header>
+    <h1>Marcus A. Davis</h1>
+    <span id="headme">Web Developer | Audio Engineer | Writer</span>
+    <p><img class="banner" src="../imgs/justin-kern-flickr-cc.jpg" alt="Banner image" ></p>
+
+    <nav>
+      <a href="#">Home</a> <a href="#">About</a> <a href="#">Blog</a> <a href="#">Projects</a> <a href="#">Contact</a>
+    </nav>
+  
+  </header>
+
+  <body>
+
+   <section class="main">
+     <h2>What is Positioning in CSS?</h2>
+     <span class="weighty"><p></p></span>
+  	
+  	<p>
+  	  If you're new to working with CSS elements one of the most basic
+      and important things to learn is to get them to show up one the
+      page where you want them to. The most basic way CSS enables you
+      to do this is with the positioning attribute. There are four
+      possible settings of positioning: static, relative, fixed, and
+      absolute.
+    </p>
+
+    <p>
+      They are basically what their names suggest. By default, all HTML
+      elements are set to static positioning. This means they are not
+      affected by top, bottom, left or right properties (these properties
+      move elements by reference to the top, bottom, left, and right
+      edges of the page). Relative elements, by contrast, do respond
+      to top, bottom, left and right. They are moved relative to what
+      their position would be if you'd left them with the default of static positioning. Moreover, other elements are not adjusted to
+      fill any gaps created by relative elements. It's like not having
+      your text wrap around a picture in a word processor.
+    </p>
+
+    <p>
+      If, for example, you wanted to have the main content of you page
+      spaced in relation to the header at the top of the page, relative
+      positioning would be great.
+    </p>
+
+    <p>
+      <img src="../imgs/eaforum-sidebar.png" width="100%" height="auto">
+      <figcaption>A good example of a scrolling sidebar which uses
+        absolute positioning.</figcaption>
+    </p>
+
+    <p>
+      Next we have the two stationary elements, fixed and absolute.
+      Fixed elements are the simplest to understand as they stay
+      in the same place on the page even if the page is scrolled.
+      Headers and footers on a page that are always displayed and
+      stick in one place as you scroll the page are good examples
+      of fixed elements. You position fixed elements using top,
+      bottom, left, and right and no gaps in the page are left
+      where the element would have been positioned if you'd left
+      it as static.
+    </p>
+
+    <p>
+      Finally, absolute elements are placed relative to the
+      nearest positioned ancestor. In English that means, if you
+      have an element that inherits positioning properties from another,
+      like "p" from "body", then an absolute positioning of "p" will
+      place it stationary on the page relative to the position of
+      "body". That means, if there is no ancestor positioning an
+      absolute element will use the document body as an ancestor and
+      thereby respond to scrolling. Absolute elements are great for
+      things you want stationary but to respond to scrolling like
+      sidebars.
+    </p>
+
+  </section>
+  	
+  <aside id="lefty">
+      <table class="leftnav">
+        <tr>
+        <td><a href="#">Home</a></td>
+        <tr>
+        <td><a href="#">Post 1</a></td>
+        <tr>
+        <td><a href="#">Post 2</a></td>
+        <tr>
+        <td><a href="#">Post 3</a></td>
+        <tr>
+        <td><a href="#">Post 4</a></td>
+        <tr>
+        <td><a href="#">Post 5</a></td>
+        <tr>
+        <td><a href="#">Post 6</a></td>
+        <tr>
+        <td><a href="#">Post 7</a></td>
+    </table>
+    </aside>
+
+    <span class="righty">
+      <h3>Marcus A. Davis</h3>
+      <img src="../imgs/me-with-glasses.jpg" alt="Picture of Me">
+    </span>
+  
+
+  <span class="footerline"><hr></span>
+
+    <footer>
+      <a href="#">GitHub</a> | <a href="#">Twitter</a> | <a href="#">LinkedIn</a> | <a href="#">R&eacute;sum&eacute;</a>
+    </footer>
+    
+
+  </body>
+
+</html>
+
+
+
