@@ -18,6 +18,8 @@ nav {
 	border-bottom: .1em solid black;
 }
 
+
+
 #rightmore {
 	padding-right: 2%;
 }
@@ -117,6 +119,10 @@ aside {
  	
 }
 
+aside a {
+	text-decoration: none;
+}
+
 
 .righty {
 	float: right;
@@ -125,6 +131,19 @@ aside {
 	text-align: center;
 	margin-bottom: 5%;
 }
+
+#contact {
+	list-style-type: none;
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+#contact li {
+	margin-bottom: 1em;
+	font-family: ;
+	padding-right: 5%;
+}
+
 
 
 
