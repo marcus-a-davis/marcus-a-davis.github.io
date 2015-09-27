@@ -1,21 +1,78 @@
-#main {
-	overflow: auto;
-	padding-bottom: 5%;
-	width: 40%;
-	text-align: center;
-	margin-top: 0px;
-	position: relative;
-	bottom: 20%;
-	left: 30%;
-	right: 30%;
-	padding-top: 0px;
+
+
+html, body, #wrapme, #leftnav, #lefty {
+	height: 100%;
 }
 
+#main {
+	
+	padding-bottom: 0%;
+	width: 100%;
+	text-align: left;
+	margin-top: 0px;
+	
+	bottom: 0%;
+	padding-top: 0em;
+	overflow: hidden;
+}
 
+/*#wrapme {
+	height: 100%;
+	margin-top: 10%;
+	padding-left: 5%;
+	position: relative;
+}*/
+
+#banner {
+	height: 20%;
+	
+}
+
+#posts {
+	margin-top: 4em;
+	margin-left: 0;
+	float: right;
+	width: 80%
+}
+
+#singlecol {
+	
+	
+	/*float: left;*/
+	left: 20%;
+	display: inline-block;
+	/*clear: left;*/
+	width: 70%;
+	height: 100%;
+	vertical-align: top;
+	border: 1px solid #c8c8c8;
+	margin-right: 2.5%;
+	margin-bottom: 2.5em;
+	padding: .8em;
+	border-radius: .2em;
+	box-shadow: 0 .1em .15em #ccc;
+	background-color: white;
+	
+}
+
+h1 {
+	text-align: center;
+	padding-bottom: 1%;
+}
 
 h2 {
 	text-align: center;
 	font-family: sans-serif;
+}
+
+#centerMe {
+	margin-left: 42%;
+}
+
+.readmore {
+	margin-top: 2%;
+	margin-left: 42%;
+	margin-bottom: .5%;
 }
 
 .weighty {
@@ -29,8 +86,70 @@ h2 {
 	text-align: left;
 }
 
-p.2 {
-	padding-bottom: 1%;
+#leftnav {
+	float: left;
+	
+	height: 100%;
+	width: 10%;
+	margin-right: 2%;
+	margin-left: 2%;
+	margin-top: 15%;
+}
+
+
+aside {
+	
+	position: relative;
+	margin-right: 5%;
+	width: 100%;
+	top: 50%;
+	margin-bottom: 5%;
+}
+
+
+
+aside ul {
+	list-style-type: none;
+	font-size: 1.1em;
+	text-align: left;
+}
+
+aside li {
+	margin-bottom: 1%;
+	margin-left: 9%;
+}
+
+aside a {
+	text-decoration: none;
+    color: black;
+}
+
+aside a:hover {
+  color: #99CCFF;
+}
+
+aside a:visited {
+ color: #52A3CC;
+}
+
+
+
+
+.righty {
+	display: inline;
+    float: left;
+    /* clear: left; */
+    left: 8%;
+    width: 20%;
+    height: 100%;
+    text-align: center;
+    /* margin-left: 65%; */
+    margin-bottom: 5%;
+    margin-top: 10%;
+}
+
+.righty h3 {
+	padding-bottom: 5%;
 }
 
 figcaption {
@@ -45,4 +164,8 @@ pre {
 	color: blue;
 	margin: 1.5%;
 	padding-top: 2%;
+}
+
+#footer {
+	clear: both;
 }
