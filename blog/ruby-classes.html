@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
+        <link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
+        <title>Marcus A. Davis - Dev Bootcamp</title>
+    </head>
+
+  
+
+  <body background="../imgs/seamless_paper_texture.png">
+    <div class="background" ></div>
+      <header>
+        <h1><a href="../index.html">Marcus A. Davis</a></h1>
+        <nav>
+          <ul>
+               
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="index.html">Blog</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="banner">
+        <div id="title">
+          <p>Technically Speaking</p>
+        </div>
+      </div>
+
+    <!-- END HEADER -->
+      <div id="main">
+
+      <div id="leftnav">
+          <aside id="lefty">
+          <ul>
+          
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="c1-chefs-kitchen.html">Chef's Kitchen</a></li>
+            <li><a href="css-concepts.html">CSS Concepts</a></li>
+            <li><a href="t1-git-blog.html">Why Use Git and GitHub</a></li>
+            <li><a href="arrays-hashes.html">Arrays and Hashes</a></li>
+            <li><a href="enumerable-methods.html">Using the Map Method</a>  </li>
+            <li><a href="ruby-classes.html">Ruby Classes</a></li>
+            <!-- <li><a href="#">Post 7</a></li> -->
+          </ul>
+          </aside>
+
+       
+        </div> 
+
+        <section id="posts">
+          <article id="singlecol">
+            <h1>Stay Classy, Ruby</h1>
+            <p>Think about machines. Not a particular machine, but the idea of a machine. Unless it happened at some kind of abstract art event, you've probably never encountered a generic machine. Still, you would feel comfortable saying machines as a group can perform operations like starting, shutting down, or navigating. Further, machines can have states like temperature, location, etc. However the abstract concept of a machine can't actually have any of this functionality or states. For that you would need a particular instance of a machine.</p>
+
+
+            <p>Similarly, if you were to model this in a programming language, you could create a Machine class that would also be a mere abstraction. To have functionality you'd have to create a particular instance of the machine. Once you've done that you could have a machine with functionality, or methods in Ruby-speak. Any particular machine could then have an actual state like temperature which could be stored in a variable.</p>
+
+            <p>Modeling this in Ruby is pretty straightforward. Let's do it:</p>
+
+            <pre>
+            1  class Machine
+            2    def initialize(location, temperature)
+            3      @location = location
+            4      @temperature = temperature
+            5    end
+            6  end
+            </pre>
+
+            <p>Line 1 of this code defines the class Machine. Line 2 creates an "initialize" method, which is a fancy way for saying, any time a particular machine is created do this. That initialize method takes two mandatory parameters: location and temperature. This means any time you create a Machine you must pass in a location and temperature.</p>
+
+            <p>On lines 3 and 4 I've defined initialize such that when you pass in a location and temperature for a machine, there will be one and only one of those variables for each machine. That's what that "@" notation in front of each of the variables means, they are called instance variables. Instance variables can also be passed between different methods the class. Let's look at an example of that:</p>
+
+            <pre>
+            1  class Machine
+            2    def initialize(location, temperature)
+            3      @location = location
+            4      @temperature = temperature
+            5    end
+            6  
+            7    def change_location
+            8     @location = "White Bear"
+            9    end
+            10   
+            11    def print_location
+            12      puts @location
+            13    end
+            14 end
+            </pre>
+
+            <p>On line 7 I have defined a method change_location which will change the @location instance variable to the value "White Bear". One line 9 I've created a simple print_location method that will print the value of @location. Note that I can use the @location method from multiple methods because it is an instance variable. Let's create a new Machine and call those methods to see what happens:</p>
+
+            <pre>
+            ...
+            11    def print_location
+            12      puts @location
+            13    end
+            14 end
+            15 
+            16 my_machine = Machine.new("Vancouver", 25)
+            17 my_machine.print_location
+            18 my_machine.change_location
+            19 my_machine.print_location
+            </pre>
+
+            <p>Continuing with the above class, on line 16 I create a new Machine class with the "Class.new" syntax and insert the required parameters. On lines 17-19 I print the location, call my change_location method and print the location again. Let's see what that returns:</p>
+
+            <pre>
+            => "Vancouver"
+            => "White Bear"
+            </pre>
+
+            <p>As you can see, the initial print_location method simply prints whatever you initially entered as the location. However, after I called change_location method on my_machine, the @location variable has been changed and as a result it prints "White Bear". Were I to create a new instance of the Machine class, the @location variable would be set to whatever I entered as its location. Like this:</p>
+
+            <pre>
+            ...
+            11    def print_location
+            12      puts @location
+            13    end
+            14 end
+            15 
+            16 my_machine = Machine.new("Vancouver", 25)
+            17 my_machine.print_location
+            18 my_machine.change_location
+            19 my_machine.print_location
+            20
+            21 new_machine = Machine.new("Chicago", 30)
+            22 new_machine.print_location
+            23 my_machine.print_location
+            24 new_machine.print_location
+            </pre>
+
+            <p>What do you think that will print? Let's see:</p>
+
+            <pre>
+            => "Vancouver"
+            => "White Bear"
+            => "Chicago"
+            => "White Bear"
+            => "Chicago"
+            </pre>
+
+            <p>As you can see, new_machine was unaffected by previous changes made to my_machine. As a result when I first call print_location on it, it returns the location I entered when I created it. If you think about these as real objects this makes sense. If you changed the license plate on a car that you already have, this wouldn't change the license plate on a different car.</p>
+
+            <p>Hopefully you can see that Ruby makes creating new classes of objects easy. You can also keep track of whether a particular instance of that object will be affected by a change by thinking about them as real objects. That's why modeling real objects like machines is a good way to get your head around class structures without getting bogged down in the details of any particular program.</p>
+          </article>
+
+         
+        </section>
+        <div class="righty">
+          <h3>Marcus A. Davis</h3>
+          <img src="../imgs/me-with-glasses.jpg" alt="Picture of Me">
+      </div>
+      </div>
+
+      
+    </div>
+  </body>
+
+  <!-- START FOOTER -->
+  <div id="footer">
+    <span class="footerline"><hr></span>
+
+      
+        <p><a href="https://github.com/marcus-a-davis/"><img src="../imgs/github48.png" alt="GitHub"></a><a href="https://twitter.com/marcusthequiet"><img src="../imgs/twitter48.png" alt="Twitter"></a><a href="https://www.linkedin.com/in/marcusadavis1"><img src="../imgs/linkedin48.png" alt="LinkedIn"></a><a href="#"><img src="../imgs/resume48.png" alt="R&eacute;sum&eacute;"></a></p>
+      
+  </div>
+
+  <!-- END FOOTER -->
+</html>
+  
+
