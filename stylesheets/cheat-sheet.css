@@ -1,0 +1,33 @@
+.headspace {
+	margin-top: 1%;
+	margin-bottom: 2%;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	text-shadow: 0 1px rgba(0,0,0,0.3);
+	font-family: Courier,monospace;
+	text-align: left;
+	
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: .8em;
+	margin: .8em 0;
+	overflow: auto;
+	border-radius: 0.4em;
+}
+
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+}
+
+#source {
+	font-weight: bold;
+	font-style: italic;
+}

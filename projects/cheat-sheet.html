@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
+        <link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
+        <link type="text/css" rel="stylesheet" href="../stylesheets/cheat-sheet.css">
+        <title>Marcus A. Davis - Dev Bootcamp</title>
+    </head>
+
+  
+
+  <body>
+    <div class="background"></div>
+      <header>
+        <h1><a href="index.html">Marcus A. Davis</a></h1>
+        <nav>
+          <ul>
+               
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../blog/index.html">Blog</a></li>
+            <li><a href="index.html">Projects</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="banner">
+        <div id="title">
+          <h1>JavaScript Objects Cheat Sheet</h1>
+        </div>
+      </div>
+
+    <!-- END HEADER -->
+      <div id="main">
+
+      <!-- <div id="leftnav">
+          <aside id="lefty">
+          <ul>
+          
+            <li><a href="index.html">Home</a></li>
+            <li><a href="c1-chefs-kitchen.html">Chef's Kitchen</a></li>
+            <li><a href="css-concepts.html">CSS Concepts</a></li>
+            <li><a href="t1-git-blog.html">Why Use Git and GitHub</a></li>
+            <li><a href="arrays-hashes.html">Arrays and Hashes</a></li>
+            <li><a href="enumerable-methods.html">Using the Map Method</a>  </li>
+            <li><a href="#">Post 6</a></li>
+            <li><a href="#">Post 7</a></li>
+          </ul>
+          </aside>
+
+       
+        </div>  -->
+
+        <section id="posts">
+          <article id="singlecol">
+            <h2 class="headspace">JavaScript Objects</h2>
+            
+            <p>Javascript objects can be created using <code class="language-javascript">new Object()</code> or by <em>object literal notation</em> (preferred) and whatever properties and methods (functions within an object) we wish added.</p>
+            <pre class="language-javascript">
+<code class="language-javascript">car = new Object();
+
+car.manufacturer = "Bugatti";
+car.model = "Veyron";
+</code></pre>
+<pre class="language-javascript"><code class="language-javascript">car = {
+    manufacturer: "Bugatti",
+    model: "Veyron"
+}
+</code></pre>
+<p>Unlike JavaScript primitives like <em>string</em> or <em>number</em>, <strong>objects are addressed by reference</strong>. This means that assigning an existing object to another variable will not make a copy. The new object will just point to the same object that the original one does. Changing either of these objects will change both of them.</p>
+<pre class="language-javascript"><code class="language-javascript">anotherCar = car;
+
+anotherCar.manufacturer = "McLaren";
+anotherCar.model = "P1";
+
+console.log( anotherCar ); // Object {manufacturer: "McLaren", model: "P1"}
+console.log( car ); // Object {manufacturer: "McLaren", model: "P1"}
+</code></pre>
+<p>We can use <code class="language-javascript">Object.create()</code> to make new objects that inherit all properties and methods from an existing object. However we still have to replace/set all the values of the new object so no real advantage to this approach. We may as well just create new objects from scratch.</p>
+<pre class="language-javascript"><code class="language-javascript">anotherCar = Object.create( car );
+
+anotherCar.manufacturer = "McLaren";
+anotherCar.model = "P1";
+
+console.log( anotherCar ); // Object {manufacturer: "McLaren", model: "P1"}
+console.log( car ); // Object {manufacturer: "Bugatti", model: "Veyron"}
+</code></pre>
+<p>So what if we want lots of different objects that are of the same type? What is the best approach to handling object creation?</p>
+<h2 class="headspace">Object Constructor Functions</h2>
+<p>All <a href="http://geoffford.co.uk/blog/javascript-cheat-sheet">built-in objects</a> (with the exception of Math) have their own constructors. When we use the <code class="language-javascript">new</code> keyword, we are telling JavaScript to use the constructor of the following object ie. <code class="language-javascript">new Date()</code>. Constructors may also receive arguments to be used within the construction process.</p>
+<p>A constructor function is similar to a class in other OO languages in that we can define properties to store our data, and methods to perform operations on this data. It is accepted convention in JavaScript to always capitalise the first character of a constructor function name to help differentiate it from regular functions.</p>
+<pre class="language-javascript"><code class="language-javascript">function Car( manufacturer, model, wheels ) {
+    this.manufacturer = manufacturer;
+    this.model = model;
+    this.wheels = wheels;
+    this.start = function() {
+        console.log( "Nice " + this.manufacturer + " " + this.model + ", let's roll!" );
+    };
+}
+</code></pre>
+<p>Note the use of the <code class="language-javascript">this</code> keyword. In the context of a constructor function (when called with the <code class="language-javascript">new</code> keyword), <code class="language-javascript">this</code> relates to the object being created. Also note that we are not returning anything either as the properties and methods are being defined directly on <code class="language-javascript">this</code> object.</p>
+<p>We can now create/instantiate new objects with our constructor and pass in the values to be set.</p>
+<pre class="language-javascript"><code class="language-javascript">var modelS = new Car( "Tesla", "Model S", 4 );
+
+console.log( modelS ); // Car {manufacturer: "Tesla", model: "Model S", wheels: 4, start: function}
+modelS.start(); // Nice Tesla Model S, let's roll!
+</code></pre>
+<p>Objects have a <code class="language-javascript">constructor</code> property which is automatically set with a reference to the constructor function used to create it. We can check this with the following methods:</p>
+<pre class="language-javascript"><code class="language-javascript">console.log( modelS.constructor == Car ); // true
+console.log( modelS instanceof Car ); // true
+</code></pre>
+<p>However, a problem remains that new objects all have a <em>copy</em> of all the properties and methods, regardless of whether or not they will every need or use them. What if we could keep certain properties and methods in a central place so that all instances of an object could access them only when required?</p>
+<h2 class="headspace">Object Prototypes</h2>
+<p>Every object has a <code class="language-javascript">prototype</code> <em>property</em> which, as it sounds, is a kind of template that an object's constructor uses when creating new instances of itself.</p>
+<p>Every built-in object (with the exception of Math which doesn&rsquo;t have a constructor) has a <code class="language-javascript">prototype</code> property with its own properties and methods defined within. Thus an instance of <code class="language-javascript">Array</code> or <code class="language-javascript">Date</code> for example inherits a multitude of methods from its constructor's prototype without carrying the weight of these within the instance itself. Objects created using <code class="language-javascript">new Object()</code> or <em>object literal notation</em> directly inherit properties and methods from <code class="language-javascript">Object.prototype</code> such as <code class="language-javascript">constructor</code>, <code class="language-javascript">hasOwnProperty()</code>, <code class="language-javascript">toString()</code>, etc.</p>
+<p>We can define our own prototypes for our constructor functions and move any properties or methods that we wish to share over to the <code class="language-javascript">prototype</code>. Let's rewrite our Car example:</p>
+<pre class="language-javascript"><code class="language-javascript">function Car( manufacturer, model, wheels ) {
+    this.manufacturer = manufacturer;
+    this.model = model;
+    this.wheels = wheels;
+}
+
+Car.prototype.start = function() {
+    console.log( "Nice " + this.manufacturer + " " + this.model + ", let's roll!" );
+};
+
+var modelS = new Car( "Tesla", "Model S", 4 );
+
+modelS.start(); // Nice Tesla Model S, let's roll!
+</code></pre>
+<p>Note that we could have defined the <code class="language-javascript">prototype</code> with object literal notation. This has the advantage of being able to define multiple properties and methods with less code. However, as this effectively replaces the whole property, we have to redefine the <code class="language-javascript">constructor</code> property.</p>
+<pre class="language-javascript"><code class="language-javascript">Car.prototype = {
+    constructor: Car,
+    start: function() {
+        console.log( "Nice " + this.manufacturer + " " + this.model + ", let's roll!" );
+    }
+}
+</code></pre>
+<p>Objects also have a prototype <em>attribute</em> or <em>object</em> (not to be confused with the prototype <em>property</em> above) which is automatically set and shows where an object descends from i.e. its <em>parent</em>. The attribute stores a reference to the constructor's <code class="language-javascript">prototype</code>. So for example a <code class="language-javascript">new Object()</code> would descend directly from <code class="language-javascript">Object.prototype</code>, an object instantiated from <code class="language-javascript">new Date()</code> would descend from <code class="language-javascript">Date.prototype</code>, and in our <code class="language-javascript">Car</code> example an object would descend from <code class="language-javascript">Car.prototype</code>. We can use the following methods to check which <code class="language-javascript">prototype</code> was used to create an object:</p>
+<pre class="language-javascript"><code class="language-javascript">console.log( Car.prototype.isPrototypeOf( modelS ) ); // true
+console.log( Object.getPrototypeOf( modelS ) === Car.prototype ); // true (IE9+)
+</code></pre>
+
+
+<p>
+<span id="source">Source:</span> <a href="http://geoffford.co.uk/blog/object-oriented-javascript-cheat-sheet">Geoff Ford - OO JavaScript Cheat Sheet</a>
+</p>
+
+          </article>
+
+        </section>
+        
+      </div>
+
+      
+    </div>
+  </body>
+
+  <!-- START FOOTER -->
+  <div id="footer">
+    <span class="footerline"><hr></span>
+
+      
+        <p><a href="https://github.com/marcus-a-davis/"><img src="../imgs/github48.png" alt="GitHub"></a><a href="https://www.linkedin.com/in/marcusadavis1"><img src="../imgs/linkedin48.png" alt="LinkedIn"></a><a href="#"><img src="../imgs/resume48.png" alt="R&eacute;sum&eacute;"></a></p>
+      
+  </div>
+
+  <!-- END FOOTER -->
+</html>
+  
+  
+    
+    
+      
+    
+    
+
+ 
