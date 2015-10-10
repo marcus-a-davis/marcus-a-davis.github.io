@@ -245,3 +245,61 @@ article p{
 
 
 
+.headspace {
+	margin-top: 1%;
+	margin-bottom: 2%;
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: #f8f8f2;
+	text-shadow: 0 1px rgba(0,0,0,0.3);
+	font-family: Courier,monospace;
+	text-align: left;
+	
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: .8em;
+	margin: .8em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+	background: #272822;
+}
+
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .2em;
+	background: #272822;
+}
+
+#source {
+	font-weight: bold;
+	font-style: italic;
+}
+
+#italicMe {
+	font-style: italic;
+}
+
+#imgOffset {
+	margin-left: 30%;
+}
+
+#imgOffsetLarge {
+	margin-left: 15%;
+}
+
+.headspace {
+	margin-top: 1%;
+	margin-bottom: 2%;
+}
+
+#vidOffset {
+	margin-left: 10%;
+	margin-bottom: 5%;
+	margin-top: 2%;
+}
