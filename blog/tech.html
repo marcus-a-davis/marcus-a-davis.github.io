@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
+        <link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
+        <title>Marcus A. Davis - Dev Bootcamp</title>
+    </head>
+
+  
+
+  <body>
+    <div class="background" ></div>
+      <header>
+        <h1><a href="../index.html">Marcus A. Davis</a></h1>
+        <nav>
+          <ul>
+               
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="index.html">Blog</a></li>
+            <li><a href="../projects/index.html">Projects</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="banner">
+        <div id="title">
+          <h2>Technically Speaking</h2>
+        </div>
+      </div>
+
+    <!-- END HEADER -->
+      <div id="main">
+
+      <div id="leftnav">
+          <aside id="lefty">
+          <ul>
+          
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="c1-chefs-kitchen.html">Chef's Kitchen</a></li>
+            <li><a href="css-concepts.html">CSS Concepts</a></li>
+            <li><a href="t1-git-blog.html">Why Use Git and GitHub</a></li>
+            <li><a href="arrays-hashes.html">Arrays and Hashes</a></li>
+            <li><a href="enumerable-methods.html">Using the Map Method</a>  </li>
+            <li><a href="ruby-classes.html">Ruby Classes</a></li>
+            <li><a href="javascript.html">Ruby Classes vs JavaScript Constructors</a></li>
+            <li><a href="tech.html">Sorting Algorithms</a></li>
+          </ul>
+          </aside>
+
+       
+        </div> 
+
+        <section id="posts">
+          <article id="singlecol">
+            <h2 class="headspace">Sorting Algorithms</h2>
+            
+            <div class="preview">
+            <p>Suppose you have bookshelf full of books you want to sort by author. There are many ways to accomplish this. While you could do this unsystemically, the easiest ways would involve you using some series of steps and repeating them until the entire shelf was ordered. However, this still leaves you with lots of ways to accomplish this and the same is true if instead of sorting physical books, you were sorting a list of books in a computer program.</p>
+
+            <p>In computer progamming, there are many different sorting algorithms to taclke this problem each of which has different best, worst and average runtimes (the explanation for which is outside the scope of this post but you can learn more <a href="http://cs.stackexchange.com/questions/192/how-to-come-up-with-the-runtime-of-algorithms">here</a>). Let's look at some of the most common sorts used to order data—merge sort, quick sort, and insertion sort—and apply them to our bookshelf sorting problem. For all of these algorithms we'll say the books are in position 0 to <span id="italicMe">n</span>. The leftmost book on the shelf is 0 and the last slot on the right is position <span id="italicMe">n</span>.</p>
+
+            <h3 class="headspace">Insertion sort</h3>
+
+            <p>Let's assume the the books in the first four slots are by Jeremy Bentham, Shelly Kagan, Henry Sidwick, and Peter Singer. The fifth book in the list is by J.S. Mill. By doig an insertion sort you would shift the books by Singer and Sidgwick to the right moving them from slots 2 and 3 to 3 and 4 (remember we've begun counting at zero). Then you'd place the book  by Mill in the slot 2.</p>
+
+            <p>Let's see what the pseudocode for this would look like:</p>
+
+            <pre class="language-pseudo">
+            <code class="language-pseudo">
+            For an array "books"
+            For n number of elements in array books
+            author is equal to "key"
+
+            For i=1 to n
+              1. Set key to books[i] and set j to i-1
+              2. WHILE j >= 0 and books[j] > key, do the following:
+                A. Set books[j+1] to books[j]
+                B. Decrement j
+              3. Set books[j+1] to key
+            </code></pre>
+
+            <p>This depends on a nested loop and the number of times the inner loop runs depends on the values in the array and the index of the outer loop. Naturally, this has implications for runtime and for reasons I won't get into here, insertion sort is a great choice to sort an array when the array is almost-sorted. Here's what insertion sort looks  like in with numbers:</p>
+
+              <div id="imgOffsetLarge">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Insertion-sort-example.gif" alt="insertion sort">
+              </div>
+
+            <h3 class="headspace">Merge sort</h3>
+            <p>Merge sort takes advantage of one humanity's most common idioms: divide and conquer. In other words, merge sort breaks the problem down into smaller problems and solves the problems before combining these solutions to solve the original problem. Again, let's apply it to our bookshelf problem. Initially, you want to sort all the books in the shelf. However, you begin by sorting the books in consecutive slots. Merge sort works by splitting the entire array down until either multiple elements are in order or there is only a sinlge element so it is already in order. Then, it merges these subarrays back together in the desired order.</p>
+
+            <p>Let's see what merge sort looks like in pseudocode:</p>
+
+            <pre class="language-pseudo">
+            <code class="language-pseudo">
+            For an array "books"
+            For p, r: starting and ending indices of a subarray of books
+
+            IF p >=r, then the subarray books[p..r] has at most one element,
+              it is already sorted. Return your input without doing anything.
+            ELSE do the following
+              Set midpoint m to [(p + r)/2] rounded down.
+              Recursively call merge sort on (books,p,m)
+              Recursively call merge sort on (books,m+1, r)
+            Call Merge on (books, p, m, r)
+            </code></pre>
+
+            <p>OK, that's not quite merge sort yet as I haven't explained how Merge would work. However, you can see the work of splitting the larger problem into subarrays created by finding the midpoint and moving on when there is one element left. Now we have to actually see how to merge them. You just combine the sorted subarrays together.</p>
+
+            <pre class="language-pseudo">
+            <code class="language-pseudo">
+            Merge(books, p, m, r)
+            For an array "books"
+            For p, m, r: indices in books. Each of the subarrays books[p..m]
+              and books[m+1,r] are assumed to already be sorted
+
+            1. Set n<sub>1</sub> to (m - p) +1, and set n<sub>2</sub> to (r - m).
+            2. Let B[0..n<sub>1</sub>] and C[0..n<sub>2</sub>] be new arrays.
+            3. Copy books[p..m] into B[0..n<sub>1</sub>] and
+                copy books[m+1..r] into C[0..n<sub>2</sub>]
+            4. Set both B[n<sub>1</sub> + 1] and C[n<sub>2</sub>] to SENTINEL (
+                a placeholder value that would never appear in the set).
+            5. Set both i and j to SENTINEL.
+            6. FOR k = p + p:
+                A. If B[i] <= C[j], then set books[k] to B[i] and increment i.
+                B. ELSE (when B[i] > C[j], set books[k] to C[j] and increment j).
+            </code></pre>
+
+            <p>Admittedly, that looks complicated. However, all that is happening is you copy elements into subarrays B anc C, keeping track of indices to track the smallest element that hasn't yet been copied back from B and C, and then copy the smaller number of the two. Eventually, one of the two arrays will have all of its elements copied back and that is the point at which only one pile of books remains to be added back. At this point, you bring out a clever trick of using a placeholder, or sentinel. This is often infinity to ensure that once we've reached the final element of a subarray, the subarray with the smaller remaining element is ensured to be chosen.</p>
+
+            <p>Let's look at a visual reprensentation of merge sort:</p>
+
+              <div id="imgOffset">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif" alt="merge sort">
+              </div>
+            
+            <h3 class="headspace">Quick sort</h3>
+
+            <p>Like merge sort, quick sort also uses a divide and conquer process. First step, divide by selecting any given book in slots p to r. Let's call this book the pivot. Move all the books on the shelf such that any books by author names that come before the pivot (or are by the same author) are to the left of the pivot and all books by authors that come after the pivot book's author are to the right of the pivot. Now for the conquering. If the divide portion moves the pivot to slot q, then recursively sort the books p to q-1 and recursively sort the books from q+1 to r. Then... nothing. You are done. There is no need to combine any subarrays. Let's look at this as pseudocode:</p>
+
+            <pre class="language-pseudo">
+            <code class="language-pseudo">
+            Quicksort(books,p,r)
+            For an array "books"
+            For p, r: starting and ending indices of a subarray of books
+            
+            1. IF p >=r then return books without doing anything
+            2. ELSE, do the following:
+                A. Call Divide(books,p,r) and set q to its result
+                B. Call Quicksort(books,p,q-1) recursively
+                C. Call Quicksort(books,q+1,r)
+            </code></pre>
+
+            <p>OK, I've cheated again as I've not defined Divide yet.</p>
+
+            <pre class="language-pseudo">
+            <code class="language-pseudo">
+            Divide(books,p,r)
+            For an array "books"
+            For p, r: starting and ending indices of a subarray of books
+            
+            1. Set q to p.
+            2. For u = p to r-1 do:
+                A. IF books[u] <= books[r], then change books[q] and books[u].
+                   And increment q.
+            3. Swap books[q] with books[r] and return q.
+            </code></pre>
+
+            <p>That's pretty simple. Again, let's see what this process looks like visually:</p>
+
+              <div id="imgOffset">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif" alt="quicksort">
+              </div>
+
+            <h3 class="headspace">Summary</h3>
+
+            <p>These are just three of many sorting algorithms all of which have different strengths and weakness (though some strictly dominate others). If you want to learn more I suggest the <a href="https://en.wikipedia.org/wiki/Sorting_algorithm">Wikipedia article on sorting algorithms</a> as it's excellent with clear tables comparing different sorting methods. If you are just looking for the speed of different algorithms, I suggest <a href="http://bigocheatsheet.com/">this cheat sheet.</a>It's also great to visualize how different sorting algorithms behave and the video below compares several of these.</p>
+
+
+              <div id="vidOffset">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/kPRA0W1kECg" frameborder="0" allowfullscreen></iframe>
+              </div>
+            
+            </div>
+          </article>
+
+          
+      </div>
+
+      
+    </div>
+  </body>
+
+  <!-- START FOOTER -->
+  <div id="footer">
+    <span class="footerline"><hr></span>
+
+      
+        <p><a href="https://github.com/marcus-a-davis/"><img src="../imgs/github48.png" alt="GitHub"></a><a href="https://www.linkedin.com/in/marcusadavis1"><img src="../imgs/linkedin48.png" alt="LinkedIn"></a><a href="#"><img src="../imgs/resume48.png" alt="R&eacute;sum&eacute;"></a></p>
+      
+  </div>
+
+  <!-- END FOOTER -->
+</html>
+
+
