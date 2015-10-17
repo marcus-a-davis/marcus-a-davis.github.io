@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
+        <link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
+        <title>Marcus A. Davis - Dev Bootcamp</title>
+    </head>
+
+  
+
+  <body>
+    <div class="background" ></div>
+      <header>
+        <h1><a href="../index.html">Marcus A. Davis</a></h1>
+        <nav>
+          <ul>
+               
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="index.html">Blog</a></li>
+            <li><a href="../projects/index.html">Projects</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="banner">
+        <div id="title">
+          <h2>Technically Speaking</h2>
+        </div>
+      </div>
+
+    <!-- END HEADER -->
+      <div id="main">
+
+      <div id="leftnav">
+          <aside id="lefty">
+          <ul>
+          
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="c1-chefs-kitchen.html">Chef's Kitchen</a></li>
+            <li><a href="css-concepts.html">CSS Concepts</a></li>
+            <li><a href="t1-git-blog.html">Why Use Git and GitHub</a></li>
+            <li><a href="arrays-hashes.html">Arrays and Hashes</a></li>
+            <li><a href="enumerable-methods.html">Using the Map Method</a>  </li>
+            <li><a href="ruby-classes.html">Ruby Classes</a></li>
+            <li><a href="javascript.html">Ruby Classes vs JavaScript Constructors</a></li>
+            <li><a href="tech.html">Sorting Algorithms</a></li>
+          </ul>
+          </aside>
+
+       
+        </div> 
+
+        <section id="posts">
+          <article id="singlecol">
+            <h1>Ruby Classes and JavaScript Constructors</h1>
+            <p>JavaScript and Ruby take different approaches to modeling objects that define objects. That is, the syntax for creating objects with no functionality of their own is quite different in the two languages. Let's begin by seeing how you create such objects in JavaScript:</p>
+
+            <pre>
+            1  function Philosopher() {
+            2    this.jobDescription = "Thinking really hard.";
+            3  }
+            4      
+            5    
+            6  my_philosopher = new Philosopher();
+            </pre>
+
+
+            <p>This is a constructor function in JavaScript. On line 1 I begin the definition by using the keyword "function" and giving the function a name, Philosopher. On line two I create an intial value for the philosopher object using the "this.property" syntax. All this means is for the object in which the "this" appears, the method "job" is equal to whatever you put on the right side of the equals operator.</p>
+
+            <p>On line 6 I create a new instance of the Philosopher function by using the "new" operator. By doing so I've set the jobDescription property I defined on line 2 as "Thinking really hard." In fact, by defining the jobDescription property in the constructor function above, I've defined the jobDescription property for all new instances of the Philosopher class. Theoretically you could set this property for each new instance of the Philosopher object you create whenever you initially define the object. However, by making a constructor function you can save yourself a lot of time and typing.</p>
+
+            <p>Let's model this same behavior in Ruby:</p>
+
+            <pre>
+            1  class Philosopher
+            2    def initialize
+            3      @jobDescription = "Thinking really hard."
+            4    end 
+            5  end
+            6
+            7  my_philosopher = Philosopher.new
+            </pre>
+
+            <p>Line 1 of this code creates a new class, or type of object, Philosopher. Line 2 creates an "initialize" method, which is a way to determine what is done each time a new instance of this class is created. Line 3 is where the parallel to JavaSript constructors is most clear, as it defines the variable "@jobDescription" as "Thinking really hard.".</p>
+
+            <p>Again, as in JavaScript, the final line of code creates a new instance of the Philosopher class. However, in Ruby the "new" is not a keyword (like "break" or "continue") but a method of the Class class (the class from which all other classes inherit).</p>
+
+            <p>Naturally, though the syntax isn't all that different, the behavior of classes in Ruby and constructor functions in JavaScript is not identical. Much of this is due to the difference in focus on object-oriented design between the languages. However, <a href="http://raganwald.com/2014/01/19/prototypes-are-not-classes.html">with minor tweaks</a> you can get JavaScript constructor functions to behave very similarly to classes in Ruby.</p>
+          </article>
+
+         
+        </section>
+        <div class="righty">
+          <h3>Marcus A. Davis</h3>
+          <img src="../imgs/me-with-glasses.jpg" alt="Picture of Me">
+      </div>
+      </div>
+
+      
+    </div>
+  </body>
+
+  <!-- START FOOTER -->
+  <div id="footer">
+    <span class="footerline"><hr></span>
+
+      
+        <p><a href="https://github.com/marcus-a-davis/"><img src="../imgs/github48.png" alt="GitHub"></a><a href="https://www.linkedin.com/in/marcusadavis1"><img src="../imgs/linkedin48.png" alt="LinkedIn"></a><a href="#"><img src="../imgs/resume48.png" alt="R&eacute;sum&eacute;"></a></p>
+      
+  </div>
+
+  <!-- END FOOTER -->
+</html>
+  
+

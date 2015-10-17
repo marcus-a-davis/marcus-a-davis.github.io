@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
+        <link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
+        <title>Marcus A. Davis - Dev Bootcamp</title>
+    </head>
+
+  
+
+  <body>
+    <div class="background" ></div>
+      <header>
+        <h1><a href="../index.html">Marcus A. Davis</a></h1>
+        <nav>
+          <ul>
+               
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="index.html">Blog</a></li>
+            <li><a href="../projects/index.html">Projects</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="banner">
+        <div id="title">
+          <h2>Technically Speaking</h2>
+        </div>
+      </div>
+
+    <!-- END HEADER -->
+      <div id="main">
+
+      <div id="leftnav">
+          <aside id="lefty">
+          <ul>
+          
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="c1-chefs-kitchen.html">Chef's Kitchen</a></li>
+            <li><a href="css-concepts.html">CSS Concepts</a></li>
+            <li><a href="t1-git-blog.html">Why Use Git and GitHub</a></li>
+            <li><a href="arrays-hashes.html">Arrays and Hashes</a></li>
+            <li><a href="enumerable-methods.html">Using the Map Method</a>  </li>
+            <li><a href="ruby-classes.html">Ruby Classes</a></li>
+            <li><a href="javascript.html">Ruby Classes vs JavaScript Constructors</a></li>
+            <li><a href="tech.html">Sorting Algorithms</a></li>
+          </ul>
+          </aside>
+
+       
+        </div> 
+
+        <section id="posts">
+          <article id="singlecol">
+            <h1>Using the Map Method</h1>
+            
+           <p>
+      What if you wanted to do something to each element in an array
+      and then return your results as an array? This is a pretty common task in programming but how can you do this in Ruby? The "each" method is very powerful and you could accomplish with the each method like this:
+     </p>
+
+     <pre>
+      my_array = [1,2,3,4]
+      new_array = my_array.each {|element| element * 2 }
+      return new_array 
+        => [2,4,6,8]
+     </pre>
+
+     <p>
+      However, as the motto suggests, there's more than one way
+      to do this in Ruby. In fact, Ruby has built in a method
+      that does this very task. The "map" method, which is part
+      of the Enumerable mixin, accomplishes the same thing:
+     </p>
+
+     <pre>
+      my_array = [1,2,3,4]
+      my_array.map {|element| element * 2 }
+        => [2,4,6,8]
+     </pre>
+
+     <p>
+      It does this by returning a new array with the results of
+      running the code block you provided on every element in
+      the collection you are running it on. "Map" also has a destructive pair "map!" which alters the original collection you entered:
+     </p>
+
+     <pre>
+      my_array = [1,2,3,4]
+      my_array.map! {|element| element * 2 }
+        => [2,4,6,8]
+      my_array
+        => [2,4,6,8]
+     </pre>
+
+     <p>
+      Finally, "map" also has an alias "collect" which is operationally identical to "map":
+     </p>
+
+     <pre>
+      my_array = [1,2,3,4]
+      my_array.collect {|element| element * 2 }
+        => [2,4,6,8]
+     </pre>
+            
+          </article>
+
+          
+        </section>
+        <div class="righty">
+          <h3>Marcus A. Davis</h3>
+          <img src="../imgs/me-with-glasses.jpg" alt="Picture of Me">
+        </div>
+      </div>
+
+      
+    </div>
+  </body>
+
+  <!-- START FOOTER -->
+  <div id="footer">
+    <span class="footerline"><hr></span>
+
+      
+        <p><a href="https://github.com/marcus-a-davis/"><img src="../imgs/github48.png" alt="GitHub"></a><a href="https://www.linkedin.com/in/marcusadavis1"><img src="../imgs/linkedin48.png" alt="LinkedIn"></a><a href="#"><img src="../imgs/resume48.png" alt="R&eacute;sum&eacute;"></a></p>
+      
+  </div>
+
+  <!-- END FOOTER -->
+</html>

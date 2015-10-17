@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
+        <link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
+        <title>Marcus A. Davis - Dev Bootcamp</title>
+    </head>
+
+  
+
+  <body>
+    <div class="background" ></div>
+      <header>
+        <h1><a href="../index.html">Marcus A. Davis</a></h1>
+        <nav>
+          <ul>
+               
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="index.html">Blog</a></li>
+            <li><a href="../projects/index.html">Projects</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="banner">
+        <div id="title">
+          <h2>Technically Speaking</h2>
+        </div>
+      </div>
+
+    <!-- END HEADER -->
+      <div id="main">
+
+      <div id="leftnav">
+          <aside id="lefty">
+          <ul>
+          
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="c1-chefs-kitchen.html">Chef's Kitchen</a></li>
+            <li><a href="css-concepts.html">CSS Concepts</a></li>
+            <li><a href="t1-git-blog.html">Why Use Git and GitHub</a></li>
+            <li><a href="arrays-hashes.html">Arrays and Hashes</a></li>
+            <li><a href="enumerable-methods.html">Using the Map Method</a>  </li>
+            <li><a href="ruby-classes.html">Ruby Classes</a></li>
+            <li><a href="javascript.html">Ruby Classes vs JavaScript Constructors</a></li>
+            <li><a href="tech.html">Sorting Algorithms</a></li>
+          </ul>
+          </aside>
+
+       
+        </div> 
+
+        <section id="posts">
+          <article id="singlecol">
+            <h1>Why Use Git and GitHub</h1>
+            
+          <p>
+      If you're just starting out programming you may be wondering what is version control and should you use it. To answer the second question first, yes, you should use it. On the first question, the difference between using a version control system and not is the difference between playing an old school video game with no save points that you have to beat in one sitting and a more modern game with checkpoints. Just as you can always return to checkpionts in a game, you can always return to any of your previous versions of your work in a version control system.
+    </p>
+
+    <p>
+      At a minimum this allows you to keep clear track of your changes and revert to previous versions of your work in case of bugs (or if you just come to prefer an older version better). It also allows you to collaborate easily with others in case you want to work on a team (see me three paragraphs below for more on why you may want to do this).
+    </p>
+    <p>
+        Git is a version control system that helps you keep track of these changes by offering you a clear log of with dates and times of all your previous changes. If, when you commit your work you leave good comments (and you should!), you'll know exactly what each of these previous versions was adding and what they were intending to alter and the inspiration for these changes.
+    </p>
+
+    <p>
+        Git keeps track of these changes in simple fashion. In git a change in your project is noted as modified, staged, or committed. If you are tracking a project a file is noted as modified if since your last save there have been changes to the file. This can happen because you have edited a file that you were already tracking or because you've added a file to a file directory which you already tracking. You can check the status of any modified files by typing "git status" into your command line while in the directory that is being tracked. The tracking itself happens automatically in any such directory.
+
+    </p>
+    <p>
+        To stage a file means that you've decided to add a file in its current version to an area where it is ready to be saved. Think of the staging area kind of like the on deck circle in baseball. The files in this area are next up to be saved. You put files in this area by typing "git add " followed by the name of the file(s) you want to add. Once you've done that you can save all of your staged files by typing "git commit". You'll want to follow this with " -m " and a clear comment wrapped in parantheses explaining what you've changed and why. Once you've done that you'll have successfully created a version of your work which you could return to at any point in the future.
+    </p>
+    <p>
+        Now that you've saved your work, what do you do if you want to share your work with collaborators? You could upload your work to GitHub which is an online hub which allows you to easily do just that. At a minimum uploading your code to GitHub gives you the advantages of having off-site duplicates of your work in case of hard drive failure but it offers much more than that. If you're working on a project as part of a team GitHub allows an easy and safe way for multiple people to work on the same file without destroying each other's work.
+
+    </p>
+    <p>
+        Moreover, GitHub makes it easy for you to collaborate outside the bounds of traditional teams. If you were to upload something to GitHub you can set it such that anyone is allowed to download your code. They could then work on it and submit proposed changes and improvements to your work which you could review and add to your original as you please. If this seems like a contrived scenario you should know this is in fact how much free software is maintained and improved.
+    </p>
+
+    <p>
+        Hopefully, you can now see the many benefits of using a version control system like git. It helps you keep track of your own work and work with others either in traditional teams or in a more open working environment. You should now be exicited to git started with git (Get it? "git started". ...I'll let myself out).
+    </p>
+            
+          </article>
+
+          
+        </section>
+        <div class="righty">
+          <h3>Marcus A. Davis</h3>
+          <img src="../imgs/me-with-glasses.jpg" alt="Picture of Me">
+        </div>
+      </div>
+
+      
+    </div>
+  </body>
+
+  <!-- START FOOTER -->
+  <div id="footer">
+    <span class="footerline"><hr></span>
+
+      
+        <p><a href="https://github.com/marcus-a-davis/"><img src="../imgs/github48.png" alt="GitHub"></a><a href="https://www.linkedin.com/in/marcusadavis1"><img src="../imgs/linkedin48.png" alt="LinkedIn"></a><a href="#"><img src="../imgs/resume48.png" alt="R&eacute;sum&eacute;"></a></p>
+      
+  </div>
+
+  <!-- END FOOTER -->
+</html>
+   
