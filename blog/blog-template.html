@@ -1,40 +1,97 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
-        <link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
-        <title>Marcus A. Davis - Dev Bootcamp</title>
-    </head>
+<html lang="en">
 
-  
+<head>
 
-  <body>
-    <div class="background" ></div>
-      <header>
-        <h1><a href="../index.html">Marcus A. Davis</a></h1>
-        <nav>
-          <ul>
-               
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="index.html">Blog</a></li>
-            <li><a href="../projects/index.html">Projects</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      <div id="banner">
-        <div id="title">
-          <h2>Technically Speaking</h2>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blog Template</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/clean-blog.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">Marcus A. Davis</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="../about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Blog</a>
+                    </li>
+                    <li>
+                        <a href="../projects/index.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="../contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-      </div>
+        <!-- /.container -->
+    </nav>
 
-    <!-- END HEADER -->
-      <div id="main">
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('../img/post-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h4 id="offsetBlogHeading">Well...</h4>
+                        <h1>Technically Speaking</h1>
+                        <hr class="small">
+                        <span class="subheading">The blog of a developing programmer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-      <div id="leftnav">
-          <aside id="lefty">
+    <!-- Sidebar -->
+
+    <!-- <aside id="lefty">
           <ul>
           
             <li><a href="../index.html">Home</a></li>
@@ -45,78 +102,85 @@
             <li><a href="enumerable-methods.html">Using the Map Method</a>  </li>
             <li><a href="ruby-classes.html">Ruby Classes</a></li>
             <li><a href="javascript.html">Ruby Classes vs JavaScript Constructors</a></li>
+            <li><a href="tech.html">Sorting Algorithms</a></li>
           </ul>
-          </aside>
+    </aside> -->
 
-       
-        </div> 
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <h1>Post Title</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-        <section id="posts">
-          <article id="singlecol">
-            <a href="#"><h1>Post 1</h1></a>
-            <span class="weighty"><p>subtitle</p></span>
-            <div class="preview">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="#" class="readmore">Read more</a>
+                    <h2 class="section-heading">Post Subheading</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
             </div>
-          </article>
+        </div>
+    </article>
 
-          <article id="singlecol">
-          <div class="downsize">
-          <a href="#"></a></div>
-          <a href="#"><h1>Post 2</h1></a>
-          <span class="weighty"><p>subtitle</p></span>
-          <div class="preview">
-          <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a href="#" class="readmore">Read more</a>
-          </div>
-          </article>
+    <hr>
 
-          <article id="singlecol">
-          <a href="#"><h1>Post 3</h1></a>
-          <span class="weighty"><p>subtitle</p></span>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          <a href="#" class="readmore">Read more</a>
-          
-          </article>
-        </section>
-        <div class="righty">
-          <h3>Marcus A. Davis</h3>
-          <img src="../imgs/me-with-glasses.jpg" alt="Picture of Me">
-      </div>
-      </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="https://github.com/marcus-a-davis/">
+                                <span class="socialBottom">
+                                    <img src="../img/github-circle64.png">
+                                    <!-- <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i> -->
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/marcusadavis1">
+                                <span class="socialBottom">
+                                    <img src="../img/linkedin-circle64.png">
+                                    <!-- <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> -->
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contact.html">
+                                <span class="socialBottom">
+                                    <img src="../img/mail-circle64.png">
+                                    <!-- <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> -->
+                                </span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <img src="img/mail-circle64.png">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li> -->
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Marcus A. Davis 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-      
-    </div>
-  </body>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
 
-  <!-- START FOOTER -->
-  <div id="footer">
-    <span class="footerline"><hr></span>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
 
-      
-        <p><a href="https://github.com/marcus-a-davis/"><img src="../imgs/github48.png" alt="GitHub"></a><a href="https://www.linkedin.com/in/marcusadavis1"><img src="../imgs/linkedin48.png" alt="LinkedIn"></a><a href="#"><img src="../imgs/resume48.png" alt="R&eacute;sum&eacute;"></a></p>
-      
-  </div>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
 
-  <!-- END FOOTER -->
+</body>
+
 </html>
-  
-
-<!--
-How was it to wireframe and create an HTML page with a pair?
-It was great. While our wireframes ending up being quite similar, it was very helpful to talk to someone as I was working through the creation of it. The same is true for the HTML. Thinking through the design decisions would have been pretty straightforward even without a pair but doing so while having someone there to offer feedback helped. 
-
-Did you find wireframing to be helpful to your development process?
-It was somewhat helpful to wireframe. I imagine as your projects and designs get more complex it will be much more useful to wireframe.
-
-
-What did you and your pair decide made a good wireframe?
-We thought the basic elements of a functional and attractive wireframe for a website was pretty limited, particularly given the limited design elements we were implementing. Having a wireframe that covered these basic elements and served as a reference point to check your html against to see if you were missing anything you thought was needed covered what we thought made a wireframe useful.
-
-
-What new semantic elements did you learn about (if any) ?
-
-We used 'nav' and 'aside' with which I'd had effectively no experiecne implementing on my own. 'nav' is used for easily tagging and altering your navigation bar in css and 'aside' is similarly used to box elements to one side of the page. 
--->
-

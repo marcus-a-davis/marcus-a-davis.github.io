@@ -1,118 +1,237 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8" />
-        <link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
-        <link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
-        <title>Marcus A. Davis - Dev Bootcamp</title>
-    </head>
+<html lang="en">
 
-  
+<head>
 
-  <body>
-    <div class="background" ></div>
-      <header>
-        <h1><a href="../index.html">Marcus A. Davis</a></h1>
-        <nav>
-          <ul>
-               
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../about.html">About</a></li>
-            <li><a href="index.html">Blog</a></li>
-            <li><a href="../projects/index.html">Projects</a></li>
-            <li><a href="../contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-      <div id="banner">
-        <div id="title">
-          <h2>Technically Speaking</h2>
-        </div>
-      </div>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <!-- END HEADER -->
-      <div id="main">
+    <title>Technically Speaking</title>
 
-      <div id="leftnav">
-          <aside id="lefty">
-          <ul>
-          
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="c1-chefs-kitchen.html">Chef's Kitchen</a></li>
-            <li><a href="css-concepts.html">CSS Concepts</a></li>
-            <li><a href="t1-git-blog.html">Why Use Git and GitHub</a></li>
-            <li><a href="arrays-hashes.html">Arrays and Hashes</a></li>
-            <li><a href="enumerable-methods.html">Using the Map Method</a>  </li>
-            <li><a href="ruby-classes.html">Ruby Classes</a></li>
-            <li><a href="javascript.html">Ruby Classes vs JavaScript Constructors</a></li>
-            <li><a href="tech.html">Sorting Algorithms</a></li>
-          </ul>
-          </aside>
+    <!-- Bootstrap Core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
 
-       
-        </div> 
+    <!-- Custom CSS -->
+    <link href="../css/clean-blog.min.css" rel="stylesheet">
 
-        <section id="posts">
+    <!-- Custom Fonts -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-          <article id="singlecol">
-          <a href="tech.html"><h1>Sorting Algorithms</h1></a>
-          <!-- <span class="weighty"><p>subtitle</p></span> -->
-          <p>Suppose you have bookshelf full of books you want to sort by author. There are many ways to accomplish this. While you could do this unsystemically, the easiest ways would involve you using some series of steps and repeating them until the entire shelf was ordered. However, this still leaves you with lots of ways to accomplish this and the same is true if instead of sorting physical books, you were sorting a list of books in a computer program.</p>
-          <a href="tech.html" class="readmore">Read more</a>
-          
-          </article>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-          <article id="singlecol">
-          <a href="javascript.html"><h1>Ruby Classes and JavaScript Constructors</h1></a>
-          <!-- <span class="weighty"><p>subtitle</p></span> -->
-          <p>JavaScript and Ruby take different approaches to modeling objects that define objects. That is, the syntax for creating objects with no functionality of their own is quite different in the two languages. Let's begin by seeing how you create such objects in JavaScript:</p>
-          <a href="javascript.html" class="readmore">Read more</a>
-          
-          </article>
+</head>
 
-          <article id="singlecol">
-            <a href="ruby-classes.html"><h1>Stay Classy, Ruby</h1></a>
-            
-            <div class="preview">
-            <p>Think about machines. Not a particular machine, but the idea of a machine. Unless it happened at some kind of abstract art event, you've probably never encountered a generic machine. Still, you would feel comfortable saying machines as a group can perform operations like starting, shutting down, or navigating. Further, machines can have states like temperature, location, etc. However the abstract concept of a machine can't actually have any of this functionality or states. For that you would need a particular instance of a machine.</p>
-            <a href="ruby-classes.html" class="readmore">Read more</a>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../index.html">Marcus A. Davis</a>
             </div>
-          </article>
 
-          <article id="singlecol">
-          <!-- <div class="downsize">
-          <a href="#"></a></div> -->
-          <a href="enumerable-methods.html"><h1>Using the Map Method</h1></a>
-          
-          <div class="preview">
-          <p>What if you wanted to do something to each element in an array and then return your results as an array? This is a pretty common task in programming but how can you do this in Ruby? The "each" method is very powerful and you could accomplish with the each method like this:</p>
-          <a href="enumerable-methods.html" class="readmore">Read more</a>
-          </div>
-          </article>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="../index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="../about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Blog</a>
+                    </li>
+                    <!-- <li class="dropdown">
+                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1
+                         <span class="caret"></span></a>
+                         <ul class="dropdown-menu">
+                           <li><a href="#">Page 1-1</a></li>
+                           <li><a href="#">Page 1-2</a></li>
+                           <li><a href="#">Page 1-3</a></li> 
+                         </ul>
+                    </li> -->
+                    <li>
+                        <a href="../projects/index.html">Projects</a>
+                    </li>
+                    <li>
+                        <a href="../contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
-          
-        </section>
-        <div class="righty">
-          <h3>Marcus A. Davis</h3>
-          <img src="../imgs/me-with-glasses.jpg" alt="Picture of Me">
-      </div>
-      </div>
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('../img/post-bg.jpg')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h4 id="offsetBlogHeading">Well...</h4>
+                        <h1>Technically Speaking</h1>
+                        <hr class="small">
+                        <span class="subheading">The blog of a developing programmer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-      
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                    <a href="tech.html">
+                        <h2 class="post-title">
+                            Sorting Algorithms
+                        </h2></a>
+                        <p>Suppose you have bookshelf full of books you want to sort by author. There are many ways to accomplish this. While you could do this unsystemically, the easiest ways would involve you using some series of steps and repeating them until the entire shelf was ordered. However, this still leaves you with lots of ways to accomplish this and the same is true if instead of sorting physical books, you were sorting a list of books in a computer program.</p>
+                        <ul class="pager">
+                            <li class="next">
+                                <a href="tech.html">Read More &rarr;</a>
+                            </li>
+                        </ul>                    
+                    <p class="post-meta">Posted by <a href="../about.html">Marcus A. Davis</a></p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="javascript.html">
+                        <h2 class="post-title">
+                            Ruby Classes and JavaScript Constructors
+                        </h2>
+                    </a>
+                        <p>JavaScript and Ruby take different approaches to modeling objects that define objects. That is, the syntax for creating objects with no functionality of their own is quite different in the two languages. Let's begin by seeing how you create such objects in JavaScript:</p>
+                        <ul class="pager">
+                                <li class="next">
+                                    <a href="javascript.html">Read More &rarr;</a>
+                                </li>
+                            </ul>                    
+                        <p class="post-meta">Posted by <a href="../about.html">Marcus A. Davis</a></p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="ruby-classes.html">
+                        <h2 class="post-title">
+                            Stay Classy, Ruby
+                        </h2>
+                    </a>
+                        <p>Think about machines. Not a particular machine, but the idea of a machine. Unless it happened at some kind of abstract art event, you've probably never encountered a generic machine. Still, you would feel comfortable saying machines as a group can perform operations like starting, shutting down, or navigating. Further, machines can have states like temperature, location, etc. However the abstract concept of a machine can't actually have any of this functionality or states. For that you would need a particular instance of a machine.</p>
+                            <ul class="pager">
+                                <li class="next">
+                                    <a href="ruby-classes.html">Read More &rarr;</a>
+                                </li>
+                            </ul>                    
+                        <p class="post-meta">Posted by <a href="../about.html">Marcus A. Davis</a></p>
+                </div>
+                <hr>
+                <div class="post-preview">
+                    <a href="enumerable-methods.html">
+                        <h2 class="post-title">
+                            Using the Map Method
+                        </h2>
+                    </a>
+                        <p>What if you wanted to do something to each element in an array and then return your results as an array? This is a pretty common task in programming but how can you do this in Ruby? The "each" method is very powerful and you could accomplish with the each method like this:</p>
+                        <ul class="pager">
+                            <li class="next">
+                                <a href="enumerable-methods.html">Read More &rarr;</a>
+                            </li>
+                        </ul>
+                </div>
+                <hr>
+                <!-- Pager -->
+                <!-- <ul class="pager">
+                    <li class="next">
+                        <a href="#">Older Posts &rarr;</a>
+                    </li>
+                </ul> -->
+
+                
+            </div>
+        </div>
     </div>
-  </body>
 
-  <!-- START FOOTER -->
-  <div id="footer">
-    <span class="footerline"><hr></span>
+    <hr>
 
-      
-        <p><a href="https://github.com/marcus-a-davis/"><img src="../imgs/github48.png" alt="GitHub"></a><a href="https://www.linkedin.com/in/marcusadavis1"><img src="../imgs/linkedin48.png" alt="LinkedIn"></a><a href="#"><img src="../imgs/resume48.png" alt="R&eacute;sum&eacute;"></a></p>
-      
-  </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="https://github.com/marcus-a-davis/">
+                                <span class="socialBottom">
+                                    <img src="../img/github-circle64.png">
+                                    <!-- <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i> -->
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/in/marcusadavis1">
+                                <span class="socialBottom">
+                                    <img src="../img/linkedin-circle64.png">
+                                    <!-- <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> -->
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="../contact.html">
+                                <span class="socialBottom">
+                                    <img src="../img/mail-circle64.png">
+                                    <!-- <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i> -->
+                                </span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="#">
+                                <span class="fa-stack fa-lg">
+                                    <img src="img/mail-circle64.png">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li> -->
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Marcus A. Davis 2015</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-  <!-- END FOOTER -->
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
 </html>
-
-<!-- Useless -->
-  

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link type="text/css" rel="stylesheet" href="../stylesheets/default.css">
+        <link type="text/css" rel="stylesheet" href="../stylesheets/blog.css">
+        <title>Marcus A. Davis - Dev Bootcamp</title>
+    </head>
+
+  
+
+  <body>
+    <div class="background" ></div>
+      <header>
+        <h1><a href="../index.html">Marcus A. Davis</a></h1>
+        <nav>
+          <ul>
+               
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="index.html">Blog</a></li>
+            <li><a href="../projects/index.html">Projects</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div id="banner">
+        <div id="title">
+          <h2>Technically Speaking</h2>
+        </div>
+      </div>
+
+    <!-- END HEADER -->
+      <div id="main">
+
+      <div id="leftnav">
+          <aside id="lefty">
+          <ul>
+          
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="c1-chefs-kitchen.html">Chef's Kitchen</a></li>
+            <li><a href="css-concepts.html">CSS Concepts</a></li>
+            <li><a href="t1-git-blog.html">Why Use Git and GitHub</a></li>
+            <li><a href="arrays-hashes.html">Arrays and Hashes</a></li>
+            <li><a href="enumerable-methods.html">Using the Map Method</a>  </li>
+            <li><a href="ruby-classes.html">Ruby Classes</a></li>
+            <li><a href="javascript.html">Ruby Classes vs JavaScript Constructors</a></li>
+            <li><a href="tech.html">Sorting Algorithms</a></li>
+          </ul>
+          </aside>
+
+       
+        </div> 
+
+        <section id="posts">
+          <article id="singlecol">
+            <h1>Arrays and Hashes</h1>
+            
+          <p>
+      When programming you may want to store a list of information. You could do so by assigning each item in the list to a separate variable. However, this is really inefficient. What you'd need to make it easier is an array, which is a way to store lists in a programming language.
+    </p>
+
+    <p>
+      How to create an array: array = [item1, item2, item3]
+    </p>
+
+    <p>
+      In general you want to use arrays anytime you want to store lists.If you are storing simple lists like lists of names or a list of your favorite movies arrays are great way to store the data.
+    </p>
+
+    <p>
+       However, all lists are not made the same. Some lists are themselves lists of lists. Suppose, for example, you were running a website and you wanted to store usernames and passwords. You would want each username to be unique but your users could use the same passwords. You could store that information in two separate arrays (or, more implausibly, in a single array) and retrieve the information at the same time whenever you needed it. However, that's pretty inefficient and if one entry in either list is ever removed without it's counterpart being removed your entire system would break down. 
+    </p>
+
+    <p>
+      How to create a hash: hash = {key1: "value1", key2: 2, key3:
+      "value3"}
+    </p>
+
+    <p>
+      What you'd want in that situation is a way to store both usernames and passwords in the same place. For that you'd need a hash. This way when trying to determine if a username and a password match you would only have to check one entry as information in hashes is stored as pairs known as keys and values.
+    </p>
+
+    <p>
+      logins = {username1: "password1", username2: "password2", username3: "password3"}
+    </p>
+
+    <p>
+     Of course, it would be bad practice to keep your passwords stored in a literal form like that but the basic idea is right. If you want to store a list which really consist of two lists with connected entries you should use a hash.
+    </p>
+            
+          </article>
+
+          
+        </section>
+        <div class="righty">
+          <h3>Marcus A. Davis</h3>
+          <img src="../imgs/me-with-glasses.jpg" alt="Picture of Me">
+        </div>
+      </div>
+
+      
+    </div>
+  </body>
+
+  <!-- START FOOTER -->
+  <div id="footer">
+    <span class="footerline"><hr></span>
+
+      
+        <p><a href="https://github.com/marcus-a-davis/"><img src="../imgs/github48.png" alt="GitHub"></a><a href="https://www.linkedin.com/in/marcusadavis1"><img src="../imgs/linkedin48.png" alt="LinkedIn"></a><a href="#"><img src="../imgs/resume48.png" alt="R&eacute;sum&eacute;"></a></p>
+      
+  </div>
+
+  <!-- END FOOTER -->
+</html>
